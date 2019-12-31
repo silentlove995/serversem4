@@ -1,0 +1,25 @@
+{
+  "musicApp": {
+    "adsSong": {
+      "home": {
+        "title": "Ads Songs",
+        "createLabel": "Thêm mới một Ads Song",
+        "createOrEditLabel": "Thêm mới hoặc cập nhật Ads Song",
+        "search": "Tìm Ads Song",
+        "notFound": "No Ads Songs found"
+      },
+      "created": "Một Ads Song mới được tạo với định danh {{ param }}",
+      "updated": "Một Ads Song cập nhật với định danh {{ param }}",
+      "deleted": "Một Ads Song đã xóa với định danh {{ param }}",
+      "delete": {
+        "question": "Bạn có chắc là muốn xóa Ads Song {{ id }}?"
+      },
+      "detail": {
+        "title": "Ads Song"
+      },
+      "content": "Content",
+      "image": "Image",
+      "songId": "Song Id"
+    }
+  }
+}

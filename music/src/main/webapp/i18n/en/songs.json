@@ -1,0 +1,36 @@
+{
+  "musicApp": {
+    "songs": {
+      "home": {
+        "title": "Songs",
+        "createLabel": "Create a new Songs",
+        "createOrEditLabel": "Create or edit a Songs",
+        "search": "Search for Songs",
+        "notFound": "No Songs found"
+      },
+      "created": "A new Songs is created with identifier {{ param }}",
+      "updated": "A Songs is updated with identifier {{ param }}",
+      "deleted": "A Songs is deleted with identifier {{ param }}",
+      "delete": {
+        "question": "Are you sure you want to delete Songs {{ id }}?"
+      },
+      "detail": {
+        "title": "Songs"
+      },
+      "title": "Title",
+      "genre": "Genre",
+      "vocal": "Vocal",
+      "country": "Country",
+      "description": "Description",
+      "songAddress": "Song Address",
+      "lyric": "Lyric",
+      "avatar": "Avatar",
+      "listenCount": "Listen Count",
+      "favoriteCount": "Favorite Count",
+      "ads": "Ads",
+      "playlist": "Playlist",
+      "album": "Album",
+      "favorite": "Favorite"
+    }
+  }
+}

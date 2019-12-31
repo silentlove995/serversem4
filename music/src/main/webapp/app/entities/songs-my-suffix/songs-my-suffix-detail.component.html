@@ -1,0 +1,87 @@
+<div class="row justify-content-center">
+    <div class="col-8">
+        <div *ngIf="songs">
+            <h2><span jhiTranslate="musicApp.songs.detail.title">Songs</span> {{songs.id}}</h2>
+            <hr>
+            <jhi-alert-error></jhi-alert-error>
+            <dl class="row-md jh-entity-details">
+                <dt><span jhiTranslate="musicApp.songs.title">Title</span></dt>
+                <dd>
+                    <span>{{songs.title}}</span>
+                </dd>
+                <dt><span jhiTranslate="musicApp.songs.genre">Genre</span></dt>
+                <dd>
+                    <span jhiTranslate="{{'musicApp.Genre.' + songs.genre}}">{{songs.genre}}</span>
+                </dd>
+                <dt><span jhiTranslate="musicApp.songs.vocal">Vocal</span></dt>
+                <dd>
+                    <span>{{songs.vocal}}</span>
+                </dd>
+                <dt><span jhiTranslate="musicApp.songs.country">Country</span></dt>
+                <dd>
+                    <span jhiTranslate="{{'musicApp.Country.' + songs.country}}">{{songs.country}}</span>
+                </dd>
+                <dt><span jhiTranslate="musicApp.songs.description">Description</span></dt>
+                <dd>
+                    <span>{{songs.description}}</span>
+                </dd>
+                <dt><span jhiTranslate="musicApp.songs.songAddress">Song Address</span></dt>
+                <dd>
+                    <span>{{songs.songAddress}}</span>
+                </dd>
+                <dt><span jhiTranslate="musicApp.songs.lyric">Lyric</span></dt>
+                <dd>
+                    <span>{{songs.lyric}}</span>
+                </dd>
+                <dt><span jhiTranslate="musicApp.songs.avatar">Avatar</span></dt>
+                <dd>
+                    <span>{{songs.avatar}}</span>
+                </dd>
+                <dt><span jhiTranslate="musicApp.songs.listenCount">Listen Count</span></dt>
+                <dd>
+                    <span>{{songs.listenCount}}</span>
+                </dd>
+                <dt><span jhiTranslate="musicApp.songs.favoriteCount">Favorite Count</span></dt>
+                <dd>
+                    <span>{{songs.favoriteCount}}</span>
+                </dd>
+                <dt><span jhiTranslate="musicApp.songs.ads">Ads</span></dt>
+                <dd>
+                    <div *ngIf="songs.adsId">
+                        <a [routerLink]="['/ads-song-my-suffix', songs.adsId, 'view']">{{songs.adsId}}</a>
+                    </div>
+                </dd>
+                <dt><span jhiTranslate="musicApp.songs.playlist">Playlist</span></dt>
+                <dd>
+                    <div *ngIf="songs.playlistId">
+                        <a [routerLink]="['/playlist-my-suffix', songs.playlistId, 'view']">{{songs.playlistId}}</a>
+                    </div>
+                </dd>
+                <dt><span jhiTranslate="musicApp.songs.album">Album</span></dt>
+                <dd>
+                    <div *ngIf="songs.albumId">
+                        <a [routerLink]="['/album-my-suffix', songs.albumId, 'view']">{{songs.albumId}}</a>
+                    </div>
+                </dd>
+                <dt><span jhiTranslate="musicApp.songs.favorite">Favorite</span></dt>
+                <dd>
+                    <div *ngIf="songs.favoriteId">
+                        <a [routerLink]="['/favorite-my-suffix', songs.favoriteId, 'view']">{{songs.favoriteId}}</a>
+                    </div>
+                </dd>
+            </dl>
+
+            <button type="submit"
+                    (click)="previousState()"
+                    class="btn btn-info">
+                <fa-icon [icon]="'arrow-left'"></fa-icon>&nbsp;<span jhiTranslate="entity.action.back"> Back</span>
+            </button>
+
+            <button type="button"
+                    [routerLink]="['/songs-my-suffix', songs.id, 'edit']"
+                    class="btn btn-primary">
+                <fa-icon [icon]="'pencil-alt'"></fa-icon>&nbsp;<span jhiTranslate="entity.action.edit"> Edit</span>
+            </button>
+        </div>
+    </div>
+</div>

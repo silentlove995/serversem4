@@ -1,0 +1,25 @@
+{
+  "musicApp": {
+    "adsSong": {
+      "home": {
+        "title": "Ads Songs",
+        "createLabel": "Create a new Ads Song",
+        "createOrEditLabel": "Create or edit a Ads Song",
+        "search": "Search for Ads Song",
+        "notFound": "No Ads Songs found"
+      },
+      "created": "A new Ads Song is created with identifier {{ param }}",
+      "updated": "A Ads Song is updated with identifier {{ param }}",
+      "deleted": "A Ads Song is deleted with identifier {{ param }}",
+      "delete": {
+        "question": "Are you sure you want to delete Ads Song {{ id }}?"
+      },
+      "detail": {
+        "title": "Ads Song"
+      },
+      "content": "Content",
+      "image": "Image",
+      "songId": "Song Id"
+    }
+  }
+}

@@ -1,0 +1,120 @@
+<div>
+    <h2 id="page-heading">
+        <span jhiTranslate="musicApp.songs.home.title">Songs</span>
+        <button id="jh-create-entity" class="btn btn-primary float-right jh-create-entity create-songs-my-suffix" [routerLink]="['/songs-my-suffix/new']">
+            <fa-icon [icon]="'plus'"></fa-icon>
+            <span class="hidden-sm-down"  jhiTranslate="musicApp.songs.home.createLabel">
+            Create a new Songs
+            </span>
+        </button>
+    </h2>
+    <jhi-alert-error></jhi-alert-error>
+    <jhi-alert></jhi-alert>
+    <div class="row">
+        <div class="col-sm-12">
+            <form name="searchForm" class="form-inline">
+                <div class="input-group w-100 mt-3">
+                    <input type="text" class="form-control" [(ngModel)]="currentSearch" id="currentSearch" name="currentSearch" placeholder="{{ 'musicApp.songs.home.search' | translate }}">
+                    <button class="input-group-append btn btn-info" (click)="search(currentSearch)">
+                        <fa-icon [icon]="'search'"></fa-icon>
+                    </button>
+                    <button class="input-group-append btn btn-danger" (click)="search('')" *ngIf="currentSearch">
+                        <fa-icon [icon]="'trash-alt'"></fa-icon>
+                    </button>
+                </div>
+            </form>
+        </div>
+    </div>
+    <br/>
+    <div class="alert alert-warning" *ngIf="songs?.length === 0">
+        <span jhiTranslate="musicApp.songs.home.notFound">No songs found</span>
+    </div>
+    <div class="table-responsive" *ngIf="songs?.length > 0">
+        <table class="table table-striped" aria-describedby="page-heading">
+            <thead>
+            <tr jhiSort [(predicate)]="predicate" [(ascending)]="ascending" [callback]="loadPage.bind(this)">
+            <th scope="col"  jhiSortBy="id"><span jhiTranslate="global.field.id">ID</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th scope="col"  jhiSortBy="title"><span jhiTranslate="musicApp.songs.title">Title</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th scope="col"  jhiSortBy="genre"><span jhiTranslate="musicApp.songs.genre">Genre</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th scope="col"  jhiSortBy="vocal"><span jhiTranslate="musicApp.songs.vocal">Vocal</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th scope="col"  jhiSortBy="country"><span jhiTranslate="musicApp.songs.country">Country</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th scope="col"  jhiSortBy="description"><span jhiTranslate="musicApp.songs.description">Description</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th scope="col"  jhiSortBy="songAddress"><span jhiTranslate="musicApp.songs.songAddress">Song Address</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th scope="col"  jhiSortBy="lyric"><span jhiTranslate="musicApp.songs.lyric">Lyric</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th scope="col"  jhiSortBy="avatar"><span jhiTranslate="musicApp.songs.avatar">Avatar</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th scope="col"  jhiSortBy="listenCount"><span jhiTranslate="musicApp.songs.listenCount">Listen Count</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th scope="col"  jhiSortBy="favoriteCount"><span jhiTranslate="musicApp.songs.favoriteCount">Favorite Count</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th scope="col"  jhiSortBy="adsId"><span jhiTranslate="musicApp.songs.ads">Ads</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th scope="col"  jhiSortBy="playlistId"><span jhiTranslate="musicApp.songs.playlist">Playlist</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th scope="col"  jhiSortBy="albumId"><span jhiTranslate="musicApp.songs.album">Album</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th scope="col"  jhiSortBy="favoriteId"><span jhiTranslate="musicApp.songs.favorite">Favorite</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th scope="col"></th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr *ngFor="let songs of songs ;trackBy: trackId">
+                <td><a [routerLink]="['/songs-my-suffix', songs.id, 'view' ]">{{songs.id}}</a></td>
+                <td>{{songs.title}}</td>
+                <td jhiTranslate="{{'musicApp.Genre.' + songs.genre}}">{{songs.genre}}</td>
+                <td>{{songs.vocal}}</td>
+                <td jhiTranslate="{{'musicApp.Country.' + songs.country}}">{{songs.country}}</td>
+                <td>{{songs.description}}</td>
+                <td>{{songs.songAddress}}</td>
+                <td>{{songs.lyric}}</td>
+                <td>{{songs.avatar}}</td>
+                <td>{{songs.listenCount}}</td>
+                <td>{{songs.favoriteCount}}</td>
+                <td>
+                    <div *ngIf="songs.adsId">
+                        <a [routerLink]="['/ads-song-my-suffix', songs.adsId , 'view' ]" >{{songs.adsId}}</a>
+                    </div>
+                </td>
+                <td>
+                    <div *ngIf="songs.playlistId">
+                        <a [routerLink]="['/playlist-my-suffix', songs.playlistId , 'view' ]" >{{songs.playlistId}}</a>
+                    </div>
+                </td>
+                <td>
+                    <div *ngIf="songs.albumId">
+                        <a [routerLink]="['/album-my-suffix', songs.albumId , 'view' ]" >{{songs.albumId}}</a>
+                    </div>
+                </td>
+                <td>
+                    <div *ngIf="songs.favoriteId">
+                        <a [routerLink]="['/favorite-my-suffix', songs.favoriteId , 'view' ]" >{{songs.favoriteId}}</a>
+                    </div>
+                </td>
+                <td class="text-right">
+                    <div class="btn-group">
+                        <button type="submit"
+                                [routerLink]="['/songs-my-suffix', songs.id, 'view' ]"
+                                class="btn btn-info btn-sm">
+                            <fa-icon [icon]="'eye'"></fa-icon>
+                            <span class="d-none d-md-inline" jhiTranslate="entity.action.view">View</span>
+                        </button>
+                        <button type="submit"
+                                [routerLink]="['/songs-my-suffix', songs.id, 'edit']"
+                                class="btn btn-primary btn-sm">
+                            <fa-icon [icon]="'pencil-alt'"></fa-icon>
+                            <span class="d-none d-md-inline" jhiTranslate="entity.action.edit">Edit</span>
+                        </button>
+                        <button type="submit" (click)="delete(songs)"
+                                class="btn btn-danger btn-sm">
+                            <fa-icon [icon]="'times'"></fa-icon>
+                            <span class="d-none d-md-inline" jhiTranslate="entity.action.delete">Delete</span>
+                        </button>
+                    </div>
+                </td>
+            </tr>
+            </tbody>
+        </table>
+    </div>
+    <div *ngIf="songs?.length > 0">
+        <div class="row justify-content-center">
+            <jhi-item-count [page]="page" [total]="totalItems" [itemsPerPage]="itemsPerPage"></jhi-item-count>
+        </div>
+        <div class="row justify-content-center">
+            <ngb-pagination [collectionSize]="totalItems" [(page)]="ngbPaginationPage" [pageSize]="itemsPerPage" [maxSize]="5" [rotate]="true" [boundaryLinks]="true" (pageChange)="loadPage($event)"></ngb-pagination>
+        </div>
+    </div>
+</div>

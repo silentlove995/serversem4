@@ -1,0 +1,53 @@
+<div class="row justify-content-center">
+    <div class="col-8">
+        <div *ngIf="posts">
+            <h2><span jhiTranslate="musicApp.posts.detail.title">Posts</span> {{posts.id}}</h2>
+            <hr>
+            <jhi-alert-error></jhi-alert-error>
+            <dl class="row-md jh-entity-details">
+                <dt><span jhiTranslate="musicApp.posts.title">Title</span></dt>
+                <dd>
+                    <span>{{posts.title}}</span>
+                </dd>
+                <dt><span jhiTranslate="musicApp.posts.content">Content</span></dt>
+                <dd>
+                    <span>{{posts.content}}</span>
+                </dd>
+                <dt><span jhiTranslate="musicApp.posts.comment">Comment</span></dt>
+                <dd>
+                    <span>{{posts.comment}}</span>
+                </dd>
+                <dt><span jhiTranslate="musicApp.posts.image">Image</span></dt>
+                <dd>
+                    <span>{{posts.image}}</span>
+                </dd>
+                <dt><span jhiTranslate="musicApp.posts.like">Like</span></dt>
+                <dd>
+                    <span>{{posts.like}}</span>
+                </dd>
+                <dt><span jhiTranslate="musicApp.posts.songAddress">Song Address</span></dt>
+                <dd>
+                    <span>{{posts.songAddress}}</span>
+                </dd>
+                <dt><span jhiTranslate="musicApp.posts.pages">Pages</span></dt>
+                <dd>
+                    <div *ngIf="posts.pagesId">
+                        <a [routerLink]="['/pages-my-suffix', posts.pagesId, 'view']">{{posts.pagesId}}</a>
+                    </div>
+                </dd>
+            </dl>
+
+            <button type="submit"
+                    (click)="previousState()"
+                    class="btn btn-info">
+                <fa-icon [icon]="'arrow-left'"></fa-icon>&nbsp;<span jhiTranslate="entity.action.back"> Back</span>
+            </button>
+
+            <button type="button"
+                    [routerLink]="['/posts-my-suffix', posts.id, 'edit']"
+                    class="btn btn-primary">
+                <fa-icon [icon]="'pencil-alt'"></fa-icon>&nbsp;<span jhiTranslate="entity.action.edit"> Edit</span>
+            </button>
+        </div>
+    </div>
+</div>

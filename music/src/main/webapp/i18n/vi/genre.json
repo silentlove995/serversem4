@@ -1,0 +1,12 @@
+{
+  "musicApp": {
+    "Genre": {
+      "null": "",
+      "Drama": "Drama",
+      "Vibrant": "Vibrant",
+      "Romantic": "Romantic",
+      "EDM": "EDM",
+      "Chinese": "Chinese"
+    }
+  }
+}

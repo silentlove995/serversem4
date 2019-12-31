@@ -1,0 +1,26 @@
+{
+  "musicApp": {
+    "pages": {
+      "home": {
+        "title": "Pages",
+        "createLabel": "Thêm mới một Pages",
+        "createOrEditLabel": "Thêm mới hoặc cập nhật Pages",
+        "search": "Tìm Pages",
+        "notFound": "No Pages found"
+      },
+      "created": "Một Pages mới được tạo với định danh {{ param }}",
+      "updated": "Một Pages cập nhật với định danh {{ param }}",
+      "deleted": "Một Pages đã xóa với định danh {{ param }}",
+      "delete": {
+        "question": "Bạn có chắc là muốn xóa Pages {{ id }}?"
+      },
+      "detail": {
+        "title": "Pages"
+      },
+      "name": "Name",
+      "avatar": "Avatar",
+      "idol": "Idol",
+      "title": "Title"
+    }
+  }
+}

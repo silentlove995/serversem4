@@ -1,0 +1,31 @@
+<div class="row justify-content-center">
+    <div class="col-8">
+        <div *ngIf="favorite">
+            <h2><span jhiTranslate="musicApp.favorite.detail.title">Favorite</span> {{favorite.id}}</h2>
+            <hr>
+            <jhi-alert-error></jhi-alert-error>
+            <dl class="row-md jh-entity-details">
+                <dt><span jhiTranslate="musicApp.favorite.user">User</span></dt>
+                <dd>
+                    <span>{{favorite.user}}</span>
+                </dd>
+                <dt><span jhiTranslate="musicApp.favorite.song">Song</span></dt>
+                <dd>
+                    <span>{{favorite.song}}</span>
+                </dd>
+            </dl>
+
+            <button type="submit"
+                    (click)="previousState()"
+                    class="btn btn-info">
+                <fa-icon [icon]="'arrow-left'"></fa-icon>&nbsp;<span jhiTranslate="entity.action.back"> Back</span>
+            </button>
+
+            <button type="button"
+                    [routerLink]="['/favorite-my-suffix', favorite.id, 'edit']"
+                    class="btn btn-primary">
+                <fa-icon [icon]="'pencil-alt'"></fa-icon>&nbsp;<span jhiTranslate="entity.action.edit"> Edit</span>
+            </button>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,25 @@
+{
+  "musicApp": {
+    "adsPlaylist": {
+      "home": {
+        "title": "Ads Playlists",
+        "createLabel": "Thêm mới một Ads Playlist",
+        "createOrEditLabel": "Thêm mới hoặc cập nhật Ads Playlist",
+        "search": "Tìm Ads Playlist",
+        "notFound": "No Ads Playlists found"
+      },
+      "created": "Một Ads Playlist mới được tạo với định danh {{ param }}",
+      "updated": "Một Ads Playlist cập nhật với định danh {{ param }}",
+      "deleted": "Một Ads Playlist đã xóa với định danh {{ param }}",
+      "delete": {
+        "question": "Bạn có chắc là muốn xóa Ads Playlist {{ id }}?"
+      },
+      "detail": {
+        "title": "Ads Playlist"
+      },
+      "content": "Content",
+      "image": "Image",
+      "playlistId": "Playlist Id"
+    }
+  }
+}

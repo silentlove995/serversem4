@@ -1,0 +1,11 @@
+version: '2'
+services:
+  music-postgresql:
+    image: postgres:11.6
+    # volumes:
+    #     - ~/volumes/jhipster/music/postgresql/:/var/lib/postgresql/data/
+    environment:
+      - POSTGRES_USER=music
+      - POSTGRES_PASSWORD=
+    ports:
+      - 5432:5432

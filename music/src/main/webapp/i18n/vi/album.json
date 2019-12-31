@@ -1,0 +1,27 @@
+{
+  "musicApp": {
+    "album": {
+      "home": {
+        "title": "Albums",
+        "createLabel": "Thêm mới một Album",
+        "createOrEditLabel": "Thêm mới hoặc cập nhật Album",
+        "search": "Tìm Album",
+        "notFound": "No Albums found"
+      },
+      "created": "Một Album mới được tạo với định danh {{ param }}",
+      "updated": "Một Album cập nhật với định danh {{ param }}",
+      "deleted": "Một Album đã xóa với định danh {{ param }}",
+      "delete": {
+        "question": "Bạn có chắc là muốn xóa Album {{ id }}?"
+      },
+      "detail": {
+        "title": "Album"
+      },
+      "title": "Title",
+      "description": "Description",
+      "vocal": "Vocal",
+      "thumbnail": "Thumbnail",
+      "song": "Song"
+    }
+  }
+}

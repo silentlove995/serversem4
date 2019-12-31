@@ -1,0 +1,12 @@
+{
+  "musicApp": {
+    "Country": {
+      "null": "",
+      "China": "China",
+      "Japan": "Japan",
+      "Korea": "Korea",
+      "US": "US",
+      "Vietnam": "Vietnam"
+    }
+  }
+}

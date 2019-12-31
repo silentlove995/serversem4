@@ -1,0 +1,45 @@
+<div class="row justify-content-center">
+    <div class="col-8">
+        <div *ngIf="playlist">
+            <h2><span jhiTranslate="musicApp.playlist.detail.title">Playlist</span> {{playlist.id}}</h2>
+            <hr>
+            <jhi-alert-error></jhi-alert-error>
+            <dl class="row-md jh-entity-details">
+                <dt><span jhiTranslate="musicApp.playlist.title">Title</span></dt>
+                <dd>
+                    <span>{{playlist.title}}</span>
+                </dd>
+                <dt><span jhiTranslate="musicApp.playlist.description">Description</span></dt>
+                <dd>
+                    <span>{{playlist.description}}</span>
+                </dd>
+                <dt><span jhiTranslate="musicApp.playlist.vocal">Vocal</span></dt>
+                <dd>
+                    <span>{{playlist.vocal}}</span>
+                </dd>
+                <dt><span jhiTranslate="musicApp.playlist.thumbnail">Thumbnail</span></dt>
+                <dd>
+                    <span>{{playlist.thumbnail}}</span>
+                </dd>
+                <dt><span jhiTranslate="musicApp.playlist.ads">Ads</span></dt>
+                <dd>
+                    <div *ngIf="playlist.adsId">
+                        <a [routerLink]="['/ads-playlist-my-suffix', playlist.adsId, 'view']">{{playlist.adsId}}</a>
+                    </div>
+                </dd>
+            </dl>
+
+            <button type="submit"
+                    (click)="previousState()"
+                    class="btn btn-info">
+                <fa-icon [icon]="'arrow-left'"></fa-icon>&nbsp;<span jhiTranslate="entity.action.back"> Back</span>
+            </button>
+
+            <button type="button"
+                    [routerLink]="['/playlist-my-suffix', playlist.id, 'edit']"
+                    class="btn btn-primary">
+                <fa-icon [icon]="'pencil-alt'"></fa-icon>&nbsp;<span jhiTranslate="entity.action.edit"> Edit</span>
+            </button>
+        </div>
+    </div>
+</div>

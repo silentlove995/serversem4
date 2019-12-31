@@ -1,0 +1,112 @@
+<div class="row justify-content-center">
+    <div class="col-8">
+        <form name="editForm" role="form" novalidate (ngSubmit)="save()" [formGroup]="editForm">
+            <h2 id="jhi-songs-my-suffix-heading" jhiTranslate="musicApp.songs.home.createOrEditLabel">Create or edit a Songs</h2>
+            <div>
+                <jhi-alert-error></jhi-alert-error>
+                <div class="form-group" [hidden]="!editForm.get('id')!.value">
+                    <label for="id" jhiTranslate="global.field.id">ID</label>
+                    <input type="text" class="form-control" id="id" name="id" formControlName="id"
+                        readonly />
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="musicApp.songs.title" for="field_title">Title</label>
+                    <input type="text" class="form-control" name="title" id="field_title"
+                           formControlName="title"/>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="musicApp.songs.genre" for="field_genre">Genre</label>
+                    <select class="form-control" name="genre" formControlName="genre" id="field_genre">
+                        <option value="Drama">{{'musicApp.Genre.Drama' | translate}}</option>
+                        <option value="Vibrant">{{'musicApp.Genre.Vibrant' | translate}}</option>
+                        <option value="Romantic">{{'musicApp.Genre.Romantic' | translate}}</option>
+                        <option value="EDM">{{'musicApp.Genre.EDM' | translate}}</option>
+                        <option value="Chinese">{{'musicApp.Genre.Chinese' | translate}}</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="musicApp.songs.vocal" for="field_vocal">Vocal</label>
+                    <input type="text" class="form-control" name="vocal" id="field_vocal"
+                           formControlName="vocal"/>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="musicApp.songs.country" for="field_country">Country</label>
+                    <select class="form-control" name="country" formControlName="country" id="field_country">
+                        <option value="China">{{'musicApp.Country.China' | translate}}</option>
+                        <option value="Japan">{{'musicApp.Country.Japan' | translate}}</option>
+                        <option value="Korea">{{'musicApp.Country.Korea' | translate}}</option>
+                        <option value="US">{{'musicApp.Country.US' | translate}}</option>
+                        <option value="Vietnam">{{'musicApp.Country.Vietnam' | translate}}</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="musicApp.songs.description" for="field_description">Description</label>
+                    <input type="text" class="form-control" name="description" id="field_description"
+                           formControlName="description"/>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="musicApp.songs.songAddress" for="field_songAddress">Song Address</label>
+                    <input type="text" class="form-control" name="songAddress" id="field_songAddress"
+                           formControlName="songAddress"/>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="musicApp.songs.lyric" for="field_lyric">Lyric</label>
+                    <textarea class="form-control" name="lyric" id="field_lyric"
+                              formControlName="lyric"></textarea>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="musicApp.songs.avatar" for="field_avatar">Avatar</label>
+                    <input type="text" class="form-control" name="avatar" id="field_avatar"
+                           formControlName="avatar"/>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="musicApp.songs.listenCount" for="field_listenCount">Listen Count</label>
+                    <input type="number" class="form-control" name="listenCount" id="field_listenCount"
+                           formControlName="listenCount"/>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="musicApp.songs.favoriteCount" for="field_favoriteCount">Favorite Count</label>
+                    <input type="number" class="form-control" name="favoriteCount" id="field_favoriteCount"
+                           formControlName="favoriteCount"/>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="musicApp.songs.ads" for="field_ads">Ads</label>
+                    <select class="form-control" id="field_ads" name="ads" formControlName="adsId">
+                        <option [ngValue]="null"></option>
+                        <option [ngValue]="adsSongOption.id" *ngFor="let adsSongOption of ads; trackBy: trackById">{{adsSongOption.id}}</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="musicApp.songs.playlist" for="field_playlist">Playlist</label>
+                    <select class="form-control" id="field_playlist" name="playlist" formControlName="playlistId">
+                        <option [ngValue]="null"></option>
+                        <option [ngValue]="playlistOption.id" *ngFor="let playlistOption of playlists; trackBy: trackById">{{playlistOption.id}}</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="musicApp.songs.album" for="field_album">Album</label>
+                    <select class="form-control" id="field_album" name="album" formControlName="albumId">
+                        <option [ngValue]="null"></option>
+                        <option [ngValue]="albumOption.id" *ngFor="let albumOption of albums; trackBy: trackById">{{albumOption.id}}</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="musicApp.songs.favorite" for="field_favorite">Favorite</label>
+                    <select class="form-control" id="field_favorite" name="favorite" formControlName="favoriteId">
+                        <option [ngValue]="null"></option>
+                        <option [ngValue]="favoriteOption.id" *ngFor="let favoriteOption of favorites; trackBy: trackById">{{favoriteOption.id}}</option>
+                    </select>
+                </div>
+            </div>
+            <div>
+                <button type="button" id="cancel-save" class="btn btn-secondary"  (click)="previousState()">
+                    <fa-icon [icon]="'ban'"></fa-icon>&nbsp;<span jhiTranslate="entity.action.cancel">Cancel</span>
+                </button>
+                <button type="submit" id="save-entity" [disabled]="editForm.invalid || isSaving" class="btn btn-primary">
+                    <fa-icon [icon]="'save'"></fa-icon>&nbsp;<span jhiTranslate="entity.action.save">Save</span>
+                </button>
+            </div>
+        </form>
+    </div>
+</div>

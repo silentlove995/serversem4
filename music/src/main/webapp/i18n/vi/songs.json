@@ -1,0 +1,36 @@
+{
+  "musicApp": {
+    "songs": {
+      "home": {
+        "title": "Songs",
+        "createLabel": "Thêm mới một Songs",
+        "createOrEditLabel": "Thêm mới hoặc cập nhật Songs",
+        "search": "Tìm Songs",
+        "notFound": "No Songs found"
+      },
+      "created": "Một Songs mới được tạo với định danh {{ param }}",
+      "updated": "Một Songs cập nhật với định danh {{ param }}",
+      "deleted": "Một Songs đã xóa với định danh {{ param }}",
+      "delete": {
+        "question": "Bạn có chắc là muốn xóa Songs {{ id }}?"
+      },
+      "detail": {
+        "title": "Songs"
+      },
+      "title": "Title",
+      "genre": "Genre",
+      "vocal": "Vocal",
+      "country": "Country",
+      "description": "Description",
+      "songAddress": "Song Address",
+      "lyric": "Lyric",
+      "avatar": "Avatar",
+      "listenCount": "Listen Count",
+      "favoriteCount": "Favorite Count",
+      "ads": "Ads",
+      "playlist": "Playlist",
+      "album": "Album",
+      "favorite": "Favorite"
+    }
+  }
+}

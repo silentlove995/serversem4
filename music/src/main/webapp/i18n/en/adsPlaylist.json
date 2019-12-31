@@ -1,0 +1,25 @@
+{
+  "musicApp": {
+    "adsPlaylist": {
+      "home": {
+        "title": "Ads Playlists",
+        "createLabel": "Create a new Ads Playlist",
+        "createOrEditLabel": "Create or edit a Ads Playlist",
+        "search": "Search for Ads Playlist",
+        "notFound": "No Ads Playlists found"
+      },
+      "created": "A new Ads Playlist is created with identifier {{ param }}",
+      "updated": "A Ads Playlist is updated with identifier {{ param }}",
+      "deleted": "A Ads Playlist is deleted with identifier {{ param }}",
+      "delete": {
+        "question": "Are you sure you want to delete Ads Playlist {{ id }}?"
+      },
+      "detail": {
+        "title": "Ads Playlist"
+      },
+      "content": "Content",
+      "image": "Image",
+      "playlistId": "Playlist Id"
+    }
+  }
+}
